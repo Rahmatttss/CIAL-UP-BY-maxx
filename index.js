@@ -281,3 +281,11 @@ zyko.sendMessage(jid, buttonMessage, { quoted, ...options })
 }
 
 startZyko()
+app.get("/views", (req, res) => {
+  res.sendFile(__dirname + "/views/index.html")
+})
+app.listen(5000, () => {
+  console.log("BOT is up and running")
+})
+app.set("json spaces", 1); 
+app.use(monitor())
